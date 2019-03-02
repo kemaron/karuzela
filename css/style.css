@@ -20,5 +20,16 @@
   width: 150px;
   height: 60px;
   background-color: #0bd83e;
+  font-size: 20px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #0bd83e;
 }
 /*# sourceMappingURL=style.css.map */
