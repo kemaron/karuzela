@@ -5,23 +5,38 @@
   <meta charset="UTF-8">
   <title>Karuzela</title>
   <link rel="stylesheet" href="vendor/normalize.css">
-  <link rel="stylesheet" href="vendor/flickity.min.css">  
+  <link rel="stylesheet" href="vendor/flickity.min.css" media="screen">  
   <link rel="stylesheet" href="css/style.css">  
 </head>
 
-<body>
+<body>   
 
     <div class="main-carousel">
-        <div class="carousel-cell"><img src="./images/Amy01.jpg"></div>
-        <div class="carousel-cell"><img src="./images/Amy02.jpg"></div>
-        <div class="carousel-cell"><img src="./images/Amy03.jpg"></div>
-        <div class="carousel-cell"><img src="./images/Amy04.jpg"></div>
-        <div class="carousel-cell"><img src="./images/Amy05.jpg"></div>
+        <div class="carousel-cell" id="carousel-cell1" style="background-image: url('images/Amy01.jpg')">
+            <div class="container">akt 1</div>
+        </div>
+        <div class="carousel-cell" id="carousel-cell2" style="background-image: url('images/Amy02.jpg')">
+            <div class="container">akt 2</div>
+        </div>
+        <div class="carousel-cell" id="carousel-cell3" style="background-image: url('images/Amy03.jpg')">
+            <div class="container">akt 3</div>
+        </div>
+        <div class="carousel-cell" id="carousel-cell4" style="background-image: url('images/Amy04.jpg')">
+            <div class="container">akt 4</div>
+        </div>
+        <div class="carousel-cell" id="carousel-cell5" style="background-image: url('images/Amy05.jpg')">
+            <div class="container">akt 5</div>
+        </div>
     </div>
 
+    <button class="button">Restart</button>
+    
         <script  src="vendor/flickity.pkgd.min.js"></script>
+        <script  src="vendor/hash.js"></script>
         <script  src="js/script.js"></script>
+        
 </body>
 
 </html>
+
 
