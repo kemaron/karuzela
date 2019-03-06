@@ -1,4 +1,16 @@
 'use strict';
+// --- Mustache --- 
+var templateSlide = document.getElementById('template-slide').innerHTML;
+Mustache.parse(templateSlide);
+var dataHello = {i: '1', image: 'Smith', title: 'Cos tam'};
+var generatedHello = Mustache.render(templateSlide, dataHello);
+	
+	// Pozostaje nam dodać wygenerowany kod HTML na naszej stronie, na końcu diva z id="results".
+	
+	var results = document.getElementById('results');
+	
+	results.insertAdjacentHTML('beforeend', generatedHello);
+
 
 // --- Ustawienia karuzeli --- 
 var elem = document.querySelector('.main-carousel');
