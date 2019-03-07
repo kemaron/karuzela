@@ -3,15 +3,12 @@
 // --- Mustache --- 
 var templateSlide = document.getElementById('template-slide').innerHTML;
 Mustache.parse(templateSlide);
-var a =1;
+
 for (var i = 0; i < slidesData.length; i++) {
-  var generatedHello = Mustache.render(templateSlide,slidesData[i]);
-  console.log (a);
-  a++;
-  console.log (generatedHello);
-  var results = document.getElementById('results');
-	
-	results.insertAdjacentHTML('beforeend', generatedHello);
+  var generatedSlide = Mustache.render(templateSlide,slidesData[i]);  
+  console.log (generatedSlide);
+  var results = document.getElementById('results');	
+	results.insertAdjacentHTML('beforeend', generatedSlide);
 }
 
 // --- Ustawienia karuzeli --- 
@@ -38,7 +35,3 @@ flkty.on('scroll', function(progress) {
   progress = Math.max(0, Math.min(1, progress));
   progressBar.style.width = progress * 100 + '%';
 });
-
-
-
-
