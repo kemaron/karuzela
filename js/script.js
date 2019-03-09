@@ -1,12 +1,11 @@
 'use strict';
 
-// --- Mustache --- 
+// **** Mustache ****
 var templateSlide = document.getElementById('template-slide').innerHTML;
 Mustache.parse(templateSlide);
-
+// --- na bazie szablonu Mustasche generuję kod z danymi z slidesDate
 for (var i = 0; i < slidesData.length; i++) {
-  var generatedSlide = Mustache.render(templateSlide,slidesData[i]);  
-  console.log (generatedSlide);
+  var generatedSlide = Mustache.render(templateSlide,slidesData[i]);
   var results = document.getElementById('results');	
 	results.insertAdjacentHTML('beforeend', generatedSlide);
 }
