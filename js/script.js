@@ -34,3 +34,14 @@ flkty.on('scroll', function(progress) {
   progress = Math.max(0, Math.min(1, progress));
   progressBar.style.width = progress * 100 + '%';
 });
+
+// Initialize and add the map
+window.initMap = function() {
+  // The location of Uluru
+  var uluru = {lat: 49.219415, lng: 20.009281};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}

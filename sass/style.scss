@@ -17,7 +17,7 @@
 // przycisk restartu
 .button {
     position: absolute;
-    left: 10px;
+    right: 10px;
     top: 10px;
     width: 150px;
     height: 60px;
@@ -34,4 +34,11 @@
     height: 20px;
     width: 0;
     background: #0bd83e;
+  }
+
+// ustawienia dla mapy  
+#map {
+    width: 100%;
+    height: calc(50vh - 20px);
+    background-color: grey;
   }

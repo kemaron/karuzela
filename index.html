@@ -14,7 +14,7 @@
         <!-- Template pobiera dane z slidesData i na ich bazie gereruje divy do wyświetlenia -->
         <script id="template-slide" type="x-tmpl-mustache">
                <div class="carousel-cell" id="carousel-cell{{id}}" style="background-image: url('{{image}}')">
-                   <div class="container"><h1>{{title}}</h1>{{{description}}}</div>
+                   <div class="container"><br><h1>{{title}}</h1>{{{description}}}</div>
                 </div>
         </script>                                   
     </div>
@@ -22,26 +22,33 @@
     <button class="button">Restart</button>
     <div class="progress-bar"></div>
 
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+
     <!-- dane do slajdów -->
     <script>
         var slidesData = [
             {
             id: '1',
-            image: 'images/Amy01.jpg', 
-            title: 'Amys group',
-            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            image: 'images/swinica.jpg', 
+            title: 'Świnica',
+            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/100x50" alt="Photo placeholder"> <p>Dolor sit.</p>',
+            coords: {lat: 49.219415, lng: 20.009281}
             },
             {
             id: '2',
-            image: 'images/Amy04.jpg', 
-            title: 'Glamour',
-            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            image: 'images/slowackiRaj.jpg', 
+            title: 'Słowacki Raj',
+            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/100x50" alt="Photo placeholder"> <p>Dolor sit.</p>',
+            coords: {lat: 48.959267, lng: 20.475547}
             },
             {
             id: '3',
-            image: 'images/Amy05.jpg', 
-            title: 'Theater',
-            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            image: 'images/olimp.jpg', 
+            title: 'Olimp',
+            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/100x50" alt="Photo placeholder"> <p>Dolor sit.</p>',
+            coords: {lat: 40.088420, lng: 22.358553}
             }
         ];
     </script>
@@ -49,6 +56,10 @@
     <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="vendor/hash.js"></script>
     <script src="js/script.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYQ1SWd5T2sAgbAWTkEunCGyGksMW7XmQ&callback=initMap">
+    </script>
+
         
 </body>
 </html>
