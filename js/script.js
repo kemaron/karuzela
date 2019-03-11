@@ -48,8 +48,7 @@ window.initMap = function() {
     // dodaję addListener dla każdego markera
     var addListener = function (i) {
       google.maps.event.addListener(marker[i], 'click', function(){
-        flkty.selectCell (i, false, false);   
-        console.log (i);
+        flkty.selectCell (i + 1, false, false);  
       });
   }
   addListener(i);
