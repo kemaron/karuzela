@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 'use strict';
 
 // **** Mustache ****
@@ -35,6 +36,7 @@ flkty.on('scroll', function(progress) {
   progressBar.style.width = progress * 100 + '%';
 });
 
+var marker = [];
 // Inicjuję mapę google
 window.initMap = function() {
   // Mapę centruję na pierwszych koordynatach
@@ -42,6 +44,14 @@ window.initMap = function() {
     document.getElementById('map'), {zoom: 4, center: slidesData[0].coords});
   // Ustawiam markery mapy na koordynaty z tabeli slidesDate
   for (var i = 0; i < slidesData.length; i++) {
-    var marker = new google.maps.Marker({position: slidesData[i].coords, map: map});    
+    marker[i] = new google.maps.Marker({position: slidesData[i].coords, map: map}); 
+    // dodaję addListener dla każdego markera
+    var addListener = function (i) {
+      google.maps.event.addListener(marker[i], 'click', function(){
+        flkty.selectCell (i, false, false);   
+        console.log (i);
+      });
+  }
+  addListener(i);
   }
 }
