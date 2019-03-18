@@ -30,7 +30,6 @@ buttonRestart.addEventListener('click', function(event) {
 
 // --- Ustawienia paska postępu --- 
 var progressBar = document.querySelector('.progress-bar');
-
 flkty.on('scroll', function(progress) {
   progress = Math.max(0, Math.min(1, progress));
   progressBar.style.width = progress * 100 + '%';
@@ -41,7 +40,7 @@ var marker = [];
 window.initMap = function() {
   // Mapę centruję na pierwszych koordynatach
   var map = new google.maps.Map(
-    document.getElementById('map'), {zoom: 4, center: slidesData[0].coords});
+    document.getElementById('map'), {zoom: 5, center: slidesData[0].coords});
   // Ustawiam markery mapy na koordynaty z tabeli slidesDate
   for (var i = 0; i < slidesData.length; i++) {
     marker[i] = new google.maps.Marker({position: slidesData[i].coords, map: map}); 
@@ -54,3 +53,10 @@ window.initMap = function() {
   addListener(i);
   }
 }
+
+// --- centrowanie mapy ----
+flkty.on( 'change', function( index ) {
+  console.log ('tu');
+  map.setZoom(14);
+  //map.panTo(slidesData[2].coords);
+});
