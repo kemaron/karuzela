@@ -42,21 +42,20 @@ window.initMap = function() {
   var map = new google.maps.Map(
     document.getElementById('map'), {zoom: 5, center: slidesData[0].coords});
   // Ustawiam markery mapy na koordynaty z tabeli slidesDate
-  for (var i = 0; i < slidesData.length; i++) {
+  for (let i = 0; i < slidesData.length; i++) {
     marker[i] = new google.maps.Marker({position: slidesData[i].coords, map: map}); 
     // dodaję addListener dla każdego markera
-    var addListener = function (i) {
       google.maps.event.addListener(marker[i], 'click', function(){
-        flkty.selectCell (i + 1, false, false);  
+        flkty.selectCell (i, false, false);  
       });
   }
-  addListener(i);
-  }
-}
+  
 
 // --- centrowanie mapy ----
 flkty.on( 'change', function( index ) {
   console.log ('tu');
-  map.setZoom(14);
-  //map.panTo(slidesData[2].coords);
+  map.setZoom(6);
+  map.panTo(slidesData[index].coords);
 });
+
+}
